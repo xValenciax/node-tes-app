@@ -14,6 +14,7 @@ const reqLogger = (req, res, next) => {
 app.use(cors());
 app.use(express.json());
 app.use(reqLogger);
+app.use(express.static('dist'));
 
 let notes = [
 	{
