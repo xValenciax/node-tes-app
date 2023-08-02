@@ -13,7 +13,11 @@ mongoose
 	});
 
 const noteSchema = new mongoose.Schema({
-	content: String,
+	content: {
+		type: String,
+		minLength: [5, 'note is too small'],
+		required: [true, 'this field is required'],
+	},
 	important: Boolean,
 });
 
